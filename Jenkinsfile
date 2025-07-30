@@ -39,7 +39,7 @@ pipeline {
                 git commit -m "Updated Deployment Manifest" || echo "No changes to commit"
                 """
 
-                withCredentials([usernamePassword(credentialsId: 'github',gitToolName:'Default' ]) {
+                withCredentials([usernamePassword(credentialsId: 'github',gitToolName:'Default')]) {
                     sh 'git push https://github.com/NghiaNT05/deployment-e2epipeline.git main'
                 }
             }
